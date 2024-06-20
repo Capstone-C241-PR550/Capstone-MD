@@ -1,0 +1,78 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/transactionHistoryFragment">
+
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.bangkit.financeguard.view.transactionhistory.TransactionHistoryFragment"
+        android:label="Transaction History">
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment">
+            <argument
+                android:name="transactionId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="com.bangkit.financeguard.view.transactiondetail.TransactionDetailFragment"
+        android:label="Transaction Detail" />
+
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        android:name="com.bangkit.financeguard.view.dictionary.DictionaryFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_dictionary" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.bangkit.financeguard.view.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.bangkit.financeguard.view.editprofile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.bangkit.financeguard.view.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="chatRoomId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.bangkit.financeguard.view.profile.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bangkit.financeguard.view.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
